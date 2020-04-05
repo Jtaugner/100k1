@@ -2,12 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbc1ecdc-6d01-43e7-9386-63f2795c6d07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/findQuestions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/reset.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/font.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/chevron-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/menu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/menu/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/menu/menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/menuLevel/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/openRules/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/openRules/openRules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/openRules/openRules.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/rules/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/rules/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/rules/rules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/tips/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/tips/tips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/tips/tips.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/topMenu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/topMenu/topMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/topMenu/topMenu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/questions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/ac/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducer/doneLevelsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducer/isDirectOrderReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducer/moneyReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducer/tipsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/selectors/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/findQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +56,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -26,10 +64,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZtPpuvpWFxh2pY4LENQKtBubTj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/menuLevel" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -40,6 +82,19 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src/questions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/menuLevel" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/components/tips" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -80,7 +135,13 @@
       <updated>1585655603855</updated>
       <workItem from="1585655605499" duration="2129000" />
       <workItem from="1585734486375" duration="2686000" />
-      <workItem from="1585761280627" duration="766000" />
+      <workItem from="1585761280627" duration="1312000" />
+      <workItem from="1585828354239" duration="116000" />
+      <workItem from="1585835742046" duration="2301000" />
+      <workItem from="1585912963426" duration="1320000" />
+      <workItem from="1585939338518" duration="1623000" />
+      <workItem from="1586005591266" duration="268000" />
+      <workItem from="1586084748934" duration="18308000" />
     </task>
     <servers />
   </component>

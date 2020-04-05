@@ -1,0 +1,24 @@
+.menuLevel {
+  border-top: #309e7e solid 1px;
+  padding: 10px 0;
+  font-size: 1.6rem;
+  color: black;
+}
+
+.levelClosed {
+  color: #b4b6b4;
+  border-top: #b4b6b4 solid 1px;
+}
+
+.menuLevel__payload {
+  font-size: 1.3rem;
+  padding-left: 22px;
+}
+
+.topMenu__mid {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*# sourceMappingURL=menuLevel.css.map */

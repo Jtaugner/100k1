@@ -1,0 +1,23 @@
+@import "../../root";
+.menuLevel{
+
+    border-top: $mainColor solid 1px;
+    padding: 10px 0;
+
+    font-size: 1.6rem;
+    color: black;
+
+}
+.levelClosed{
+    color: $closedColor;
+    border-top: $closedColor solid 1px;
+}
+.menuLevel__payload{
+    font-size: 1.3rem;
+    padding-left: 22px;
+}
+.topMenu__mid{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

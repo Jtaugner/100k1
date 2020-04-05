@@ -1,0 +1,27 @@
+.menu {
+  width: 100%;
+  padding: 50px 20px 0 20px;
+}
+
+.menu_chooseOrder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #b4b6b4;
+  margin: 20px 0 10px 0;
+}
+
+.menu_chooseOrder p {
+  cursor: pointer;
+}
+
+.menu_chooseOrder p:first-child {
+  margin-right: 50px;
+}
+
+.menu_chooseOrder_active {
+  color: #309e7e;
+}
+
+/*# sourceMappingURL=menu.css.map */
