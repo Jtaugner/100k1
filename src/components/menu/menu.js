@@ -11,6 +11,7 @@ import OpenRules from "../openRules";
 import Rules from "../rules";
 import './menu.css'
 import MenuLevel from "../menuLevel";
+import {changeOrder} from "../../store/ac";
 function countMoneyByAnswers(answers) {
     let money = 0;
 
@@ -23,7 +24,8 @@ function countMoneyByAnswers(answers) {
     return money;
 }
 function Menu(props) {
-    const {doneLevelsAmount, doneLevels, money, questions, isDirectOrder} = props;
+    const {doneLevelsAmount, doneLevels, money, questions, isDirectOrder,
+        changeOrder} = props;
     const [isRules, setIsRules] = useState(false);
     return (
         <div className="menu">
@@ -37,8 +39,12 @@ function Menu(props) {
                 <p>{money}₽</p>
             </TopMenu>
             <div className="menu_chooseOrder">
-                <p className={isDirectOrder ? 'menu_chooseOrder_active' : ''}>Прямая</p>
-                <p className={!isDirectOrder ? 'menu_chooseOrder_active' : ''}>Обратная</p>
+                <p
+                    onClick={() => {changeOrder(true)}}
+                    className={isDirectOrder ? 'menu_chooseOrder_active' : ''}>Прямая</p>
+                <p
+                    onClick={() => {changeOrder(false)}}
+                    className={!isDirectOrder ? 'menu_chooseOrder_active' : ''}>Обратная</p>
             </div>
             {
                 questions.map((arr, index) => {
@@ -68,6 +74,12 @@ export default connect(
             money: selectMoney(store), isDirectOrder,
             doneLevels
         }
-    }
+    },
+    (disptach) => ({
+        changeOrder: (isDirect) => {
+            disptach(changeOrder(isDirect));
+        }
+    })
+
 )
 (Menu);

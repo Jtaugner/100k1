@@ -18,7 +18,7 @@ export const getLevelDone = (level) => ({
     type: DONE_LEVEL,
     level
 });
-export const changeRules = ( ) => ({
+export const changeRules = () => ({
     type: CHANGE_RULES
 });
 export const changeOrder = (isDirect) => ({
