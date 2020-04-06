@@ -12,6 +12,9 @@ import Rules from "../rules";
 import './menu.css'
 import MenuLevel from "../menuLevel";
 import {changeOrder} from "../../store/ac";
+import InfiniteScroll from "react-infinite-scroll-component";
+
+
 function countMoneyByAnswers(answers) {
     let money = 0;
 
@@ -24,9 +27,15 @@ function countMoneyByAnswers(answers) {
     return money;
 }
 function Menu(props) {
-    const {doneLevelsAmount, doneLevels, money, questions, isDirectOrder,
+    const {doneLevels, money, questions, isDirectOrder,
         changeOrder} = props;
     const [isRules, setIsRules] = useState(false);
+    const [levelsLength, setLevelsLength] = useState(20);
+    const [menuLevels, setMenuLevels] = useState(questions.slice(0, 20));
+    const addLevels = () => {
+        setMenuLevels(questions.slice(0, levelsLength + 20));
+        setLevelsLength(levelsLength + 20);
+    };
     return (
         <div className="menu">
             <TopMenu>
@@ -46,17 +55,25 @@ function Menu(props) {
                     onClick={() => {changeOrder(false)}}
                     className={!isDirectOrder ? 'menu_chooseOrder_active' : ''}>Обратная</p>
             </div>
-            {
-                questions.map((arr, index) => {
-                    return <MenuLevel
-                        isLevelClosed={doneLevels[index][0] === 0}
-                        key={'menuLevel' + index}
-                        questionNumber={index + 1}
-                        question={arr[0]}
-                        answers={doneLevels[index][1].reduce((acc, n) => acc + n, 0)}
-                        money={countMoneyByAnswers(doneLevels[index][1])}/>
-                })
-            }
+            <InfiniteScroll
+            dataLength={menuLevels.length}
+            next={addLevels}
+            hasMore={levelsLength < questions.length}
+            loader={<h4>Загрузка...</h4>}
+            >
+                {
+                    menuLevels.map((arr, index) => {
+                        return <MenuLevel
+                            isLevelClosed={doneLevels[index][0] === 0}
+                            key={'menuLevel' + index}
+                            questionNumber={index + 1}
+                            question={arr[0]}
+                            answers={doneLevels[index][1].reduce((acc, n) => acc + n, 0)}
+                            money={countMoneyByAnswers(doneLevels[index][1])}/>
+                    })
+                }
+            </InfiniteScroll>
+
 
 
             {isRules && <Rules/>}
