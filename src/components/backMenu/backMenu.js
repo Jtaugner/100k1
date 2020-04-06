@@ -1,8 +1,15 @@
 import React from 'react';
 import './backMenu.css'
-function BackMenu() {
+import {connect} from "react-redux";
+import {backMenu} from "../../store/ac";
+function BackMenu(props) {
+    const {backMenu} = props;
     return (
-        <div className="backMenu"/>
+        <div className="backMenu" onClick={backMenu}/>
     );
 }
-export default BackMenu;
+export default connect(null, (dispatch) => ({
+    backMenu: () => {
+        dispatch(backMenu());
+    }
+}))(BackMenu);

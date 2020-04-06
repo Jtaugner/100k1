@@ -1,8 +1,68 @@
 @import "../../root";
-
+.game{
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+}
 .game__question{
-  margin: 40px auto;
+  margin: 0 auto 20px auto;
+
+  font-size: 2rem;
+  color: $mainColor;
   text-align: center;
 }
 
+.answers__answer, .giveAnswer{
+  width: 250px;
+  border: 1px solid $mainColor;
+}
+.answers__answer{
+
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 auto 10px auto;
+  padding: 5px;
+
+  border-radius: 5px;
+
+  font-size: 1.6rem;
+  color: $mainColor;
+}
+
+.giveAnswer{
+  display: block;
+
+  margin: 30px auto 10px auto;
+  padding: 5px;
+
+  background-color: transparent;
+
+  font-size: 1.8rem;
+  color: $mainColor;
+}
+.giveAnswer::placeholder{
+  color: $closedColor;
+}
+
+
+//Анимация для добавления ответа
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active  {
+  opacity: 1;
+}
+.fade-exit  {
+  opacity: 1;
+}
+.fade-exit-active  {
+  opacity: 0;
+}
+.fade-exit-active{
+  transition: opacity 100ms;
+}
+.fade-enter-active{
+  transition: opacity 400ms;
+}
 

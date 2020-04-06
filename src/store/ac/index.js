@@ -1,6 +1,14 @@
-import {ADD_RIGHT_ANSWER, BUY_LEVEL, CHANGE_ORDER, CHANGE_RULES, DONE_LEVEL, SHOW_ADV, START_GAME} from '../common'
+import {
+    ADD_RIGHT_ANSWER,
+    BUY_LEVEL,
+    CHANGE_ORDER,
+    CHANGE_RULES,
+    DONE_LEVEL,
+    BACK_MENU,
+    SHOW_ADV,
+    START_GAME
+} from '../common'
 import {selectOrder} from "../selectors";
-import {push} from 'connected-react-router'
 
 
 export const buyLevel =
@@ -14,18 +22,17 @@ export const buyLevel =
 
     })
 };
-
+export const backMenu = () => ({
+   type: BACK_MENU
+});
 export const getLevelDone = (level) => ({
     type: DONE_LEVEL,
     level
 });
-export const startGame = (level) => (dispatch, getState) => {
-    dispatch({
-            type: START_GAME,
-            level
-            });
-    dispatch(push('/game'));
-};
+export const startGame = (level) => ({
+    type: START_GAME,
+        level
+});
 export const changeRules = () => ({
     type: CHANGE_RULES
 });

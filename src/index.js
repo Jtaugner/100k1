@@ -5,20 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
 import {store} from "./store";
-import {MemoryRouter} from "react-router-dom";
 
 ReactDOM.render(
-    <MemoryRouter
-    initialEntries={['/menu', '/game']}
-    initialIndex={0}
-    >
-        <Provider store={store}>
-            <App
-            />
-        </Provider>
-    </MemoryRouter>
+    <Provider store={store}>
+        <App
+        />
+    </Provider>
     ,
-  document.getElementById('root')
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -13,8 +13,6 @@ import {changeOrder, startGame} from "../../store/ac";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Money from "../money";
 import {moneyPerAnswer} from "../common";
-import {Link} from "react-router-dom";
-
 
 function countMoneyByAnswers(answers) {
     let money = 0;
@@ -40,7 +38,6 @@ function Menu(props) {
         setMenuLevels(questions.slice(0, levelsLength + ADD_LEVELS));
         setLevelsLength(levelsLength + ADD_LEVELS);
     };
-
     return (
         <div className="menu">
             <TopMenu>
@@ -68,15 +65,13 @@ function Menu(props) {
             >
                 {
                     menuLevels.map((arr, index) => {
-                        return <Link to={'/game'}>
-                            <MenuLevel
+                        return <MenuLevel
                                 isLevelClosed={doneLevels[index][0] === 0}
                                 key={'ml' + isDirectOrder + index}
                                 questionNumber={index + 1}
                                 question={arr[0]}
                                 answers={doneLevels[index][1].reduce((acc, n) => acc + n, 0)}
                                 money={countMoneyByAnswers(doneLevels[index][1])}/>
-                        </Link>
 
                     })
                 }
