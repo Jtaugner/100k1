@@ -40,7 +40,7 @@ function changeDoneLevels(stateDoneLevels, action) {
         stateDoneLevels
             [action.payload.level][1][action.payload.answer] = 1;
     }
-    localStorage.setItem('doneDirectLevels', stateDoneLevels);
+    // localStorage.setItem('doneDirectLevels', stateDoneLevels);
     return [...stateDoneLevels];
 }
 

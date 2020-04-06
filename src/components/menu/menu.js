@@ -1,51 +1,56 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import {
     selectDoneDirectLevels,
     selectDoneReverseLevels,
-    selectIsDirectOrder,
-    selectMoney
+    selectIsDirectOrder
 } from "../../store/selectors";
 import TopMenu from "../topMenu";
-import OpenRules from "../openRules";
 import Rules from "../rules";
 import './menu.css'
 import MenuLevel from "../menuLevel";
-import {changeOrder} from "../../store/ac";
+import {changeOrder, startGame} from "../../store/ac";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Money from "../money";
+import {moneyPerAnswer} from "../common";
+import {Link} from "react-router-dom";
 
 
 function countMoneyByAnswers(answers) {
     let money = 0;
 
-    if(answers[1] === 1) money += 20;
-    if(answers[2] === 1) money += 40;
-    if(answers[3] === 1) money += 60;
-    if(answers[4] === 1) money += 80;
-    if(answers[5] === 1) money += 100;
+    answers.forEach((ans, ind) => {
+        if(ans) money += moneyPerAnswer[ind];
+    });
 
     return money;
 }
+let ADD_LEVELS = 40;
 function Menu(props) {
-    const {doneLevels, money, questions, isDirectOrder,
-        changeOrder} = props;
+    const {doneLevels, isDirectOrder, changeOrder, startGame,
+        questions
+    } = props;
     const [isRules, setIsRules] = useState(false);
-    const [levelsLength, setLevelsLength] = useState(20);
-    const [menuLevels, setMenuLevels] = useState(questions.slice(0, 20));
+    const [levelsLength, setLevelsLength] = useState(ADD_LEVELS);
+    const [menuLevels, setMenuLevels] = useState(questions.slice(0, ADD_LEVELS));
+    useEffect(() => {
+        setMenuLevels(questions.slice(0, ADD_LEVELS))
+    }, [questions]);
     const addLevels = () => {
-        setMenuLevels(questions.slice(0, levelsLength + 20));
-        setLevelsLength(levelsLength + 20);
+        setMenuLevels(questions.slice(0, levelsLength + ADD_LEVELS));
+        setLevelsLength(levelsLength + ADD_LEVELS);
     };
+
     return (
         <div className="menu">
             <TopMenu>
-                <OpenRules
+                <p className={'rulesButton'}
                     onClick={() => {
                         setIsRules(!isRules)
-                    }}/>
+                    }}> ? </p>
                 <p className={'topMenu__mid'}>
                     {0}/{questions.length}</p>
-                <p>{money}₽</p>
+                <Money />
             </TopMenu>
             <div className="menu_chooseOrder">
                 <p
@@ -63,13 +68,16 @@ function Menu(props) {
             >
                 {
                     menuLevels.map((arr, index) => {
-                        return <MenuLevel
-                            isLevelClosed={doneLevels[index][0] === 0}
-                            key={'menuLevel' + index}
-                            questionNumber={index + 1}
-                            question={arr[0]}
-                            answers={doneLevels[index][1].reduce((acc, n) => acc + n, 0)}
-                            money={countMoneyByAnswers(doneLevels[index][1])}/>
+                        return <Link to={'/game'}>
+                            <MenuLevel
+                                isLevelClosed={doneLevels[index][0] === 0}
+                                key={'ml' + isDirectOrder + index}
+                                questionNumber={index + 1}
+                                question={arr[0]}
+                                answers={doneLevels[index][1].reduce((acc, n) => acc + n, 0)}
+                                money={countMoneyByAnswers(doneLevels[index][1])}/>
+                        </Link>
+
                     })
                 }
             </InfiniteScroll>
@@ -82,19 +90,23 @@ function Menu(props) {
 }
 
 export default connect(
-    (store) => {
+    (store, ownProps) => {
         let isDirectOrder = selectIsDirectOrder(store);
         let doneLevels = isDirectOrder ? selectDoneDirectLevels(store) :
             selectDoneReverseLevels(store);
-        console.log(doneLevels);
+        let questions = isDirectOrder ? ownProps.directQuestions : ownProps.reverseQuestions
         return {
-            money: selectMoney(store), isDirectOrder,
-            doneLevels
+           isDirectOrder,
+            doneLevels, questions
+
         }
     },
     (disptach) => ({
         changeOrder: (isDirect) => {
             disptach(changeOrder(isDirect));
+        },
+        startGame: (level) => {
+            disptach(startGame(level));
         }
     })
 

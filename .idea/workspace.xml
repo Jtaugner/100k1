@@ -2,13 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbc1ecdc-6d01-43e7-9386-63f2795c6d07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lastQuestions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/backMenu/backMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/backMenu/backMenu.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/game/game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/game/game.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/game/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/money/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/money/money.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/money/money.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/rules/rules.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/history.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducer/levelReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/openRules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/backMenu/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/openRules/openRules.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/openRules/openRules.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/openRules/openRules.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/backMenu/backMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/openRules/openRules.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rules/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/backMenu/backMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/questions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/ac/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ac/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer/doneLevelsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/doneLevelsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -34,7 +63,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/menuLevel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/store" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -48,16 +77,16 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/store" />
+      <recent name="$PROJECT_DIR$/src/components/money" />
+      <recent name="$PROJECT_DIR$/src/components/game" />
+      <recent name="$PROJECT_DIR$/src/components/menuLevel" />
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/questions" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/menuLevel" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/components/tips" />
-      <recent name="$PROJECT_DIR$/src/assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,7 +135,7 @@
       <workItem from="1585939338518" duration="1623000" />
       <workItem from="1586005591266" duration="268000" />
       <workItem from="1586084748934" duration="18904000" />
-      <workItem from="1586170202792" duration="1547000" />
+      <workItem from="1586170202792" duration="8561000" />
     </task>
     <servers />
   </component>

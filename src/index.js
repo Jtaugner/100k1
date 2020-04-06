@@ -5,13 +5,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
 import {store} from "./store";
+import {MemoryRouter} from "react-router-dom";
 
 ReactDOM.render(
-    <Provider store={store}>
-
+    <MemoryRouter
+    initialEntries={['/menu', '/game']}
+    initialIndex={0}
+    >
+        <Provider store={store}>
             <App
             />
-    </Provider>,
+        </Provider>
+    </MemoryRouter>
+    ,
   document.getElementById('root')
 );
 

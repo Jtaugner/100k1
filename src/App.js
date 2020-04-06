@@ -3,14 +3,21 @@ import logo from './logo.svg';
 import './root.css'
 import './App.css';
 import Menu from "./components/menu";
-import {questions} from "./questions";
+import {directQuestions, reverseQuestions} from "./questions";
+import {Route} from "react-router-dom";
+import Game from "./components/game";
 
 function App() {
-  return (
-      <>
-        <Menu questions={questions}/>
-      </>
-  );
+    return (
+        <>
+            <Route path={'/menu'}
+                   render={props => <Menu directQuestions={directQuestions}
+                                          reverseQuestions={reverseQuestions}/>}/>
+            <Route path={'/game'}
+                    render={props => <Game/>} />
+
+        </>
+    );
 }
 
 export default App;
