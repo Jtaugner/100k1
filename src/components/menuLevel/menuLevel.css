@@ -26,6 +26,7 @@
   height: 20px;
   background: url(../../assets/images/chevron-right.svg) center center no-repeat;
   background-size: 100%;
+  cursor: pointer;
 }
 
 .buyLevel {

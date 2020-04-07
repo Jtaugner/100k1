@@ -35,9 +35,8 @@ export const backMenu = () => ({
 export const changeSounds = () => ({
     type: CHANGE_SOUNDS
 });
-export const getLevelDone = (level) => ({
-    type: DONE_LEVEL,
-    level
+export const getLevelDone = () => ({
+    type: DONE_LEVEL
 });
 export const startGame = (level) => ({
     type: START_GAME,

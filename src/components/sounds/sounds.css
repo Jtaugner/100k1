@@ -3,6 +3,7 @@
   height: 30px;
   background: url(soundsOn.png) center center no-repeat;
   background-size: 100%;
+  cursor: pointer;
 }
 
 .soundsOff {

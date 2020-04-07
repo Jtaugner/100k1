@@ -2,32 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbc1ecdc-6d01-43e7-9386-63f2795c6d07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/chevron-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sounds/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sounds/sounds.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sounds/sounds.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducer/soundsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/rules/close.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/chevron-left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/chevron-left.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/backMenu/backMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/backMenu/backMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/backMenu/backMenu.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/backMenu/backMenu.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/backMenu/backMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/backMenu/backMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game/game.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/game/game.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuLevel/menuLevel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rules/rules.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rules/rules.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rules/rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rules/rules.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sounds/sounds.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sounds/sounds.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sounds/sounds.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sounds/sounds.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sounds/sounds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sounds/sounds.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tips/tips.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tips/tips.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tips/tips.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tips/tips.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tips/tips.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tips/tips.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/topMenu/topMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/topMenu/topMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/topMenu/topMenu.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/topMenu/topMenu.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/topMenu/topMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/topMenu/topMenu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/questions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/questions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/ac/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ac/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/doneLevelsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/doneLevelsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/moneyReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/moneyReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/selectors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/selectors/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer/soundsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/soundsReducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +60,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/store/reducer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/rules" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -73,11 +80,11 @@
       <recent name="$PROJECT_DIR$/src/questions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/rules" />
       <recent name="$PROJECT_DIR$/src/store/reducer" />
       <recent name="$PROJECT_DIR$/src/components/sounds" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/store" />
-      <recent name="$PROJECT_DIR$/src/components/money" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -127,7 +134,7 @@
       <workItem from="1586005591266" duration="268000" />
       <workItem from="1586084748934" duration="18904000" />
       <workItem from="1586170202792" duration="21364000" />
-      <workItem from="1586266658609" duration="3273000" />
+      <workItem from="1586266658609" duration="10039000" />
     </task>
     <servers />
   </component>

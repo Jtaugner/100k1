@@ -3,6 +3,7 @@
   height: 25px;
   background: url(../../assets/images/chevron-left.svg) center center no-repeat;
   background-size: 100%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=backMenu.css.map */

@@ -7,6 +7,7 @@ else isSounds = true;
 
 export const soundsReducer = (state = isSounds, action) => {
     if(action.type === CHANGE_SOUNDS){
+        localStorage.setItem('isSounds', !state);
         return !state;
     }
     return state;

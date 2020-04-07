@@ -41,15 +41,6 @@ function Menu(props) {
     };
     return (
         <div className="menu">
-            <TopMenu>
-                <p className={'rulesButton'}
-                    onClick={() => {
-                        setIsRules(!isRules)
-                    }}> ? </p>
-                <Money/>
-                <Sounds isSounds={isSounds} onClick={changeSounds}/>
-
-            </TopMenu>
             <div className="menu_chooseOrder">
                 <p
                     onClick={() => {changeOrder(true)}}
@@ -77,6 +68,16 @@ function Menu(props) {
                     })
                 }
             </InfiniteScroll>
+
+            <TopMenu>
+                <p className={'rulesButton'}
+                   onClick={() => {
+                       setIsRules(!isRules)
+                   }}> ? </p>
+                <Money/>
+                <Sounds isSounds={isSounds} onClick={changeSounds}/>
+
+            </TopMenu>
 
 
 

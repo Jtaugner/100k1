@@ -1,3 +1,38 @@
+.rulesBlackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
 
+.rules {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 15px;
+  background-color: #309e7e;
+  font-size: 1.5rem;
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 20px;
+}
+
+.closeRules {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: url(close.svg) center center no-repeat;
+  background-size: 100%;
+}
 
 /*# sourceMappingURL=rules.css.map */

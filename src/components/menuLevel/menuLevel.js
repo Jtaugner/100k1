@@ -19,7 +19,7 @@ function MenuLevel(props) {
             </p>
             <div className="menuLevel__payload">
                 <p>Отгадано: {answers}/6</p>
-                <p>Рублей: {money}/300</p>
+                <p>Рублей: {money}/210</p>
             </div>
             {
                 isLevelClosed ?
