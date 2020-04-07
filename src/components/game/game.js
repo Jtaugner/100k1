@@ -9,7 +9,7 @@ import {moneyPerAnswer} from "../common";
 import {selectDoneDirectLevels, selectDoneReverseLevels, selectIsDirectOrder, selectLevel} from "../../store/selectors";
 import {reverseQuestions, directQuestions} from "../../questions";
 import {addRightAnswer} from "../../store/ac";
-import {CSSTransition, SwitchTransition, TransitionGroup} from "react-transition-group";
+import {CSSTransition, SwitchTransition} from "react-transition-group";
 
 //Проверка правильности ответа
 
@@ -94,12 +94,12 @@ function Game(props) {
         e.preventDefault();
         for (let i = 0; i < answers.length; i++) {
             let coef = calculateFuzzyEqualValue(answer, answers[i]);
-            if (coef > 0.5) {
+            if (coef > 0.6) {
                 addRightAnswer(level, i);
-                setAnswer('');
                 break;
             }
         }
+        setAnswer('');
 
     };
     return (

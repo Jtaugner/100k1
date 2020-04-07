@@ -6,24 +6,34 @@ import {
     DONE_LEVEL,
     BACK_MENU,
     SHOW_ADV,
-    START_GAME
+    START_GAME, CHANGE_SOUNDS
 } from '../common'
-import {selectOrder} from "../selectors";
+import {selectMoney, selectOrder} from "../selectors";
 
 
 export const buyLevel =
     (level) => (dispatch, getState) => {
-    const isDirect = selectOrder(getState());
-    dispatch({
-        type: BUY_LEVEL,
-        payload: {
-            isDirect, level
-        }
+    const state = getState();
+    const money = selectMoney(state);
+    if(money >= 100){
+        const isDirect = selectOrder(state);
+        dispatch({
+            type: BUY_LEVEL,
+            payload: {
+                isDirect, level
+            }
 
-    })
+        })
+    }else{
+
+    }
+
 };
 export const backMenu = () => ({
-   type: BACK_MENU
+    type: BACK_MENU
+});
+export const changeSounds = () => ({
+    type: CHANGE_SOUNDS
 });
 export const getLevelDone = (level) => ({
     type: DONE_LEVEL,

@@ -40,7 +40,6 @@ function changeDoneLevels(stateDoneLevels, action) {
         stateDoneLevels
             [action.payload.level][1][action.payload.answer] = 1;
     }
-    localStorage.setItem('doneDirectLevels', JSON.stringify(stateDoneLevels));
     return [...stateDoneLevels];
 }
 
@@ -50,7 +49,9 @@ function changeDoneLevels(stateDoneLevels, action) {
 export const doneDirectLevelsReducer =
     (stateDoneLevels = doneDirectLevels, action) => {
     if(action.payload && action.payload.isDirect){
-        return changeDoneLevels(stateDoneLevels, action);
+        const newState = changeDoneLevels(stateDoneLevels, action);
+        localStorage.setItem('doneDirectLevels', JSON.stringify(newState));
+        return newState;
     }
     return stateDoneLevels
 };
@@ -59,7 +60,9 @@ export const doneDirectLevelsReducer =
 export const doneReverseLevelsReducer =
     (stateDoneLevels = doneReverseLevels, action) => {
         if(action.payload && !action.payload.isDirect){
-            return changeDoneLevels(stateDoneLevels, action);
+            const newState = changeDoneLevels(stateDoneLevels, action);
+            localStorage.setItem('doneReverseLevels', JSON.stringify(newState));
+            return newState;
         }
         return stateDoneLevels
     };

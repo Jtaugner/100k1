@@ -5,6 +5,7 @@ import {tipsReducer} from "./tipsReducer";
 import {doneDirectLevelsReducer, doneReverseLevelsReducer} from "./doneLevelsReducer";
 import {isGameReducer} from "./isGameReducer";
 import {levelReducer} from "./levelReducer";
+import {soundsReducer} from "./soundsReducer";
 
 
 const reducer = combineReducers({
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   doneReverseLevels: doneReverseLevelsReducer,
   isGame: isGameReducer,
   level: levelReducer,
+  isSounds: soundsReducer,
 });
 
 export {reducer};

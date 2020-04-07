@@ -6,3 +6,4 @@ export const selectDoneDirectLevels = store => store.doneDirectLevels;
 export const selectDoneReverseLevels = store => store.doneReverseLevels;
 export const selectIsGame = store => store.isGame;
 export const selectLevel = store => store.level;
+export const selectIsSounds= store => store.isSounds;

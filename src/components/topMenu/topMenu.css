@@ -14,10 +14,4 @@
   color: white;
 }
 
-.topMenu__mid {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /*# sourceMappingURL=topMenu.css.map */

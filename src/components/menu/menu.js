@@ -3,16 +3,17 @@ import {connect} from "react-redux";
 import {
     selectDoneDirectLevels,
     selectDoneReverseLevels,
-    selectIsDirectOrder
+    selectIsDirectOrder, selectIsSounds
 } from "../../store/selectors";
 import TopMenu from "../topMenu";
 import Rules from "../rules";
 import './menu.css'
 import MenuLevel from "../menuLevel";
-import {changeOrder, startGame} from "../../store/ac";
+import {changeOrder, changeSounds, startGame} from "../../store/ac";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Money from "../money";
 import {moneyPerAnswer} from "../common";
+import Sounds from "../sounds";
 
 function countMoneyByAnswers(answers) {
     let money = 0;
@@ -26,7 +27,7 @@ function countMoneyByAnswers(answers) {
 let ADD_LEVELS = 40;
 function Menu(props) {
     const {doneLevels, isDirectOrder, changeOrder, startGame,
-        questions
+        questions, isSounds, changeSounds
     } = props;
     const [isRules, setIsRules] = useState(false);
     const [levelsLength, setLevelsLength] = useState(ADD_LEVELS);
@@ -45,9 +46,9 @@ function Menu(props) {
                     onClick={() => {
                         setIsRules(!isRules)
                     }}> ? </p>
-                <p className={'topMenu__mid'}>
-                    {0}/{questions.length}</p>
-                <Money />
+                <Money/>
+                <Sounds isSounds={isSounds} onClick={changeSounds}/>
+
             </TopMenu>
             <div className="menu_chooseOrder">
                 <p
@@ -92,7 +93,8 @@ export default connect(
         let questions = isDirectOrder ? ownProps.directQuestions : ownProps.reverseQuestions
         return {
            isDirectOrder,
-            doneLevels, questions
+            doneLevels, questions,
+            isSounds: selectIsSounds(store)
 
         }
     },
@@ -102,7 +104,9 @@ export default connect(
         },
         startGame: (level) => {
             disptach(startGame(level));
-        }
+        },
+        changeSounds: () => disptach(changeSounds())
+
     })
 
 )

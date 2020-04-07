@@ -7,3 +7,4 @@ export const SHOW_ADV = "SHOW_ADV";
 export const CHANGE_RULES = "CHANGE_RULES";
 export const START_GAME = "START_GAME";
 export const BACK_MENU = "BACK_MENU";
+export const CHANGE_SOUNDS = "CHANGE_SOUNDS";

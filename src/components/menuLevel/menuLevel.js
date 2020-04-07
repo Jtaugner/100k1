@@ -1,16 +1,19 @@
 import React from 'react';
 import './menuLevel.css'
 import {connect} from "react-redux";
-import {startGame} from "../../store/ac";
+import {buyLevel, startGame} from "../../store/ac";
+import {selectMoney} from "../../store/selectors";
 const classNames = require('classnames');
 function MenuLevel(props) {
-    const {questionNumber, question, answers, money, isLevelClosed, startGame} = props;
+    const {questionNumber, question,
+        answers, money, isLevelClosed, startGame,
+        buyLevel} = props;
     const menuLevelClasses = classNames({
         'menuLevel': true,
         'levelClosed': isLevelClosed
     });
     return (
-        <div className={menuLevelClasses} onClick={()=>{startGame(questionNumber-1)}}>
+        <div className={menuLevelClasses} >
             <p className="menuLevel__question">
                 {questionNumber}) {question}
             </p>
@@ -18,6 +21,12 @@ function MenuLevel(props) {
                 <p>Отгадано: {answers}/6</p>
                 <p>Рублей: {money}/300</p>
             </div>
+            {
+                isLevelClosed ?
+                    <div className={'openLevel buyLevel'} onClick={()=>{buyLevel(questionNumber-1)}} />
+                    :
+                <div className={'openLevel'} onClick={()=>{startGame(questionNumber-1)}} />
+            }
 
         </div>
     );
@@ -25,5 +34,8 @@ function MenuLevel(props) {
 export default connect(null, (dispatch)=>({
     startGame: (level) => {
         dispatch(startGame(level));
+    },
+    buyLevel: (level) => {
+        dispatch(buyLevel(level));
     }
 }))(MenuLevel);

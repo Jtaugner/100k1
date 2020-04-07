@@ -1,6 +1,7 @@
 .menuLevel {
+  position: relative;
   border-top: #309e7e solid 1px;
-  padding: 10px 0;
+  padding: 10px 20px 10px 0;
   font-size: 1.6rem;
   color: black;
 }
@@ -14,6 +15,22 @@
   font-size: 1.3rem;
   padding-left: 22px;
   margin-top: 5px;
+}
+
+.openLevel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: url(../../assets/images/chevron-right.svg) center center no-repeat;
+  background-size: 100%;
+}
+
+.buyLevel {
+  background: url(../../assets/images/plus.svg) center center no-repeat;
+  background-size: 100%;
 }
 
 /*# sourceMappingURL=menuLevel.css.map */
