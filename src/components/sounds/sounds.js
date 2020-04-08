@@ -4,7 +4,7 @@ function Sounds(props) {
     const {isSounds} = props;
     return (
         <div onClick={props.onClick}
-            className={'sounds' + (isSounds ? ' soundsOff' : '')} />
+            className={'sounds' + (!isSounds ? ' soundsOff' : '')} />
     );
 }
 export default Sounds;

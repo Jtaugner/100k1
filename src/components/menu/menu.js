@@ -26,7 +26,7 @@ function countMoneyByAnswers(answers) {
 }
 let ADD_LEVELS = 40;
 function Menu(props) {
-    const {doneLevels, isDirectOrder, changeOrder, startGame,
+    const {doneLevels, isDirectOrder, changeOrder,
         questions, isSounds, changeSounds
     } = props;
     const [isRules, setIsRules] = useState(false);

@@ -2,14 +2,37 @@ import {
     ADD_RIGHT_ANSWER,
     BUY_LEVEL,
     CHANGE_ORDER,
-    CHANGE_RULES,
     DONE_LEVEL,
     BACK_MENU,
     SHOW_ADV,
     START_GAME, CHANGE_SOUNDS, GET_TIP, CAN_SHOW_ADV, SHOW_ADV_TIP
 } from '../common'
 import {selectMoney, selectOrder} from "../selectors";
-import showAdvert from "../../createAdv";
+
+
+let showAdvert;
+if(window.YaGames) {
+    window.YaGames.init()
+        .then(ysdk => {
+            var isNativeCache = ysdk.yandexApp && ysdk.yandexApp.enabled;
+            if ('serviceWorker' in navigator && !isNativeCache) {
+                window.onload = function(){
+                    navigator.serviceWorker
+                        .register('sw.js')
+                        .then(function(reg) {
+                            console.log('Registration succeeded. Scope is ' + reg.scope);
+                        })
+                        .catch(function(error) {
+                            console.error('Trouble with sw: ', error);
+                        });
+                };
+            }
+            showAdvert = () => {
+                ysdk.adv.showFullscreenAdv();
+            };
+
+        });
+}
 
 
 export const buyLevel =
@@ -33,7 +56,10 @@ export const buyLevel =
 function allowShowAdv(dispatch) {
     if(showAdvert){
         showAdvert();
+        console.log('show Advert');
         setTimeout(()=>{
+            console.log('disp');
+            console.log(dispatch);
             dispatch(canShowAdv);
         }, 200000);
         return true;
@@ -63,9 +89,9 @@ export const changeOrder = (isDirect) => ({
 });
 export const showAdv = () => (dispatch) =>{
     allowShowAdv(dispatch);
-    return {
+    dispatch({
         type: SHOW_ADV
-    };
+    });
 }; 
     
 export const canShowAdv = () => ({
@@ -73,9 +99,9 @@ export const canShowAdv = () => ({
 });
 export const showTipAdv = () => (dispatch)=>{
     if(!allowShowAdv(dispatch)) return {};
-    return{
+    dispatch({
         type: SHOW_ADV_TIP
-    }
+    });
 };
 export const addRightAnswer =
     (level, answer) => (dispatch, getState) => {

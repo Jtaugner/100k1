@@ -3,8 +3,10 @@ import './tips.css'
 import {selectShowAdv} from "../../store/selectors";
 import {connect} from "react-redux";
 import {showTipAdv} from "../../store/ac";
+
 function Tips(props) {
     const {tipsAmount, canShowAdv, showTipAdv} = props;
+
     return (
         <div className="tips" onClick={props.onClick}>
             {

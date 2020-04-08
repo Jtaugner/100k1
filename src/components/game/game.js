@@ -9,13 +9,14 @@ import {moneyPerAnswer} from "../common";
 import {
     selectDoneDirectLevels,
     selectDoneReverseLevels,
-    selectIsDirectOrder,
+    selectIsDirectOrder, selectIsSounds,
     selectLevel,
     selectTips
 } from "../../store/selectors";
 import {reverseQuestions, directQuestions} from "../../questions";
 import {addRightAnswer, getLevelDone, getTip} from "../../store/ac";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
+import {doneAnswerSound, badAnswerSound, wasAnswerSound, doneLevelSound} from "../../sounds";
 
 //Проверка правильности ответа
 
@@ -91,6 +92,7 @@ function calculateFuzzyEqualValue(first, second) {
 function makeAnswerGood(answer) {
     return answer.toLocaleLowerCase()
         .replace(/(^для )|(^с )|(^из-за )/, '')
+        .replace('ё', 'е')
         .trim()
 }
 function testAnswersDone(answers) {
@@ -106,7 +108,7 @@ function getAnswersIndexes(answers) {
 }
 function Game(props) {
     const {question, isDirect, answers, doneAnswers, level, addRightAnswer, tips,
-        getLevelDone, getTip} = props;
+        getLevelDone, getTip, isSounds} = props;
     const [answer, setAnswer] = useState('');
     const [doneAnswer, setDoneAnswer] = useState(-1);
     const [wrongAnswer, setWrongAnswer] = useState(false);
@@ -135,15 +137,22 @@ function Game(props) {
             if (coef > 0.7) {
                 if(doneAnswers[i] === 1){
                     setDoneAnswerAnimation(i);
+                    if(isSounds) wasAnswerSound.play();
                 }else{
                     doneAnswers[i] = 1;
                     addRightAnswer(level, i);
-                    if(testAnswersDone(doneAnswers)) getLevelDone();
+                    if(testAnswersDone(doneAnswers)) {
+                        if(isSounds) doneLevelSound.play();
+                        getLevelDone();
+                    }else{
+                        if(isSounds) doneAnswerSound.play();
+                    }
                 }
                 setAnswer('');
                 return;
             }
         }
+        if(isSounds) badAnswerSound.play();
         setWrongAnswerAnimation();
     };
     const getTipClick = () => {
@@ -153,6 +162,8 @@ function Game(props) {
                 getTip();
                 let rand = indexes[Math.floor(Math.random() * indexes.length)];
                 addRightAnswer(level, rand);
+                if(isSounds) doneAnswerSound.play();
+
             }
 
         }
@@ -215,14 +226,14 @@ function Game(props) {
 export default connect((store) => {
         let isDirect = selectIsDirectOrder(store);
         let level = selectLevel(store);
-        console.log(selectDoneDirectLevels(store));
         let doneAnswers = isDirect ? selectDoneDirectLevels(store)[level][1] :
             selectDoneReverseLevels(store)[level][1];
         return {
             question: isDirect ? directQuestions[level][0] : reverseQuestions[level][0],
             answers: isDirect ? directQuestions[level][1] : reverseQuestions[level][1],
             doneAnswers, level, isDirect,
-            tips: selectTips(store)
+            tips: selectTips(store),
+            isSounds: selectIsSounds(store)
         }
 
     },
