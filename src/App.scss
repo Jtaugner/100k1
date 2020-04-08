@@ -1,0 +1,114 @@
+@import "root";
+
+html, body, #root{
+    height: 100%;
+    font: 10px/1.5 Noto Sans, sans-serif;
+}
+.menu, .game{
+
+    background: url(assets/images/background.png) fixed center center no-repeat;
+    background-size: cover;
+    box-shadow:
+            0 0 1px rgba(0, 0, 0, .5),
+            -0 0 1px rgba(0, 0, 0, .5);
+}
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('assets/font.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Анимация для смены Меню и Игры*/
+.fade-left-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.fade-left-enter-active  {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-left-exit  {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-left-exit-active  {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.fade-left-enter-active ,
+.fade-left-exit-active {
+    transition: opacity 350ms, transform 350ms;
+}
+
+
+.fade-right-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.fade-right-enter-active  {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-right-exit  {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.fade-right-exit-active  {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.fade-right-enter-active ,
+.fade-right-exit-active {
+    transition: opacity 350ms, transform 350ms;
+}
+
+.my-node-enter {
+    opacity: 0;
+}
+.my-node-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+.my-node-exit {
+    opacity: 1;
+}
+.my-node-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+.property{
+    height: 100%;
+}
+.topDecor{
+    display: none;
+}
+@media (min-width: 600px) {
+    .blur{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        background: url(assets/images/desk-background.png) repeat;
+    }
+
+
+    .property{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .topDecor {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-color: $mainColor;
+    }
+    .menu, .game{
+        background-size: auto;
+    }
+
+}

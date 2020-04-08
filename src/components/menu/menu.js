@@ -81,7 +81,7 @@ function Menu(props) {
 
 
 
-            {isRules && <Rules/>}
+            {isRules && <Rules setIsRules={setIsRules}/>}
         </div>
     );
 }

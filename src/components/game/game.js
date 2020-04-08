@@ -14,7 +14,7 @@ import {
     selectTips
 } from "../../store/selectors";
 import {reverseQuestions, directQuestions} from "../../questions";
-import {addRightAnswer, getLevelDone} from "../../store/ac";
+import {addRightAnswer, getLevelDone, getTip} from "../../store/ac";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
 
 //Проверка правильности ответа
@@ -90,16 +90,23 @@ function calculateFuzzyEqualValue(first, second) {
 }
 function makeAnswerGood(answer) {
     return answer.toLocaleLowerCase()
-        .replace(/^для/, '').replace(/^с/, '')
+        .replace(/(^для )|(^с )|(^из-за )/, '')
         .trim()
 }
 function testAnswersDone(answers) {
     for(let i = 0; i < answers.length; i++) if(answers[i] === 0) return false;
     return true;
 }
+function getAnswersIndexes(answers) {
+    let indexes = [];
+    answers.forEach((el, ind) => {
+        if(el === 0) indexes.push(ind);
+    });
+    return indexes;
+}
 function Game(props) {
     const {question, isDirect, answers, doneAnswers, level, addRightAnswer, tips,
-        getLevelDone} = props;
+        getLevelDone, getTip} = props;
     const [answer, setAnswer] = useState('');
     const [doneAnswer, setDoneAnswer] = useState(-1);
     const [wrongAnswer, setWrongAnswer] = useState(false);
@@ -138,7 +145,17 @@ function Game(props) {
             }
         }
         setWrongAnswerAnimation();
+    };
+    const getTipClick = () => {
+        if(tips >= 1){
+            let indexes = getAnswersIndexes(doneAnswers);
+            if(indexes.length > 0){
+                getTip();
+                let rand = indexes[Math.floor(Math.random() * indexes.length)];
+                addRightAnswer(level, rand);
+            }
 
+        }
 
     };
     return (
@@ -146,7 +163,7 @@ function Game(props) {
             <TopMenu>
                 <BackMenu/>
                 <Money/>
-                <Tips tipsAmount={tips}/>
+                <Tips tipsAmount={tips} onClick={getTipClick}/>
             </TopMenu>
             <div className="game__question">{question}</div>
 
@@ -183,6 +200,7 @@ function Game(props) {
             <form onSubmit={testAnswer}>
                 <input type="text" className={'giveAnswer' + (wrongAnswer ? ' wrongAnswer' : '')}
                        value={answer}
+                       autoFocus={true}
                        onChange={handleInputAnswer}
 
                        placeholder={'Ваш ответ'}/>
@@ -214,6 +232,9 @@ export default connect((store) => {
         },
         getLevelDone: () => {
             dispatch(getLevelDone());
+        },
+        getTip: () => {
+            dispatch(getTip());
         }
     })
 )(Game);

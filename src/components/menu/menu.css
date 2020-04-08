@@ -1,4 +1,5 @@
 .menu {
+  position: relative;
   width: 100%;
   padding: 50px 20px 0 20px;
 }
@@ -27,6 +28,20 @@
 
 .menu_chooseOrder_active {
   color: #309e7e;
+}
+
+@media (min-width: 600px) {
+  .rulesButton {
+    font-size: 4rem;
+  }
+
+  .menu_chooseOrder {
+    font-size: 2.5rem;
+  }
+
+  .menu_chooseOrder p:first-child {
+    margin-right: 100px;
+  }
 }
 
 /*# sourceMappingURL=menu.css.map */

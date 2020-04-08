@@ -34,4 +34,19 @@
   background-size: 100%;
 }
 
+@media (min-width: 600px) {
+  .menuLevel {
+    font-size: 1.8rem;
+  }
+
+  .menuLevel__payload {
+    font-size: 1.5rem;
+  }
+
+  .openLevel {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 /*# sourceMappingURL=menuLevel.css.map */

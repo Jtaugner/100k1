@@ -12,6 +12,9 @@ function App(props) {
     const {isGame} = props;
     return (
         <>
+            <div className="blur" />
+            <div className="topDecor" />
+        <div className={'property'}>
             <SwitchTransition>
                 <CSSTransition
                     key={isGame}
@@ -28,7 +31,8 @@ function App(props) {
 
 
 
-        </>
+        </div>
+            </>
     );
 }
 

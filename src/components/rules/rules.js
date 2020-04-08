@@ -1,29 +1,24 @@
 import React from 'react';
 import './rules.scss'
-import {changeRules} from "../../store/ac";
-import {connect} from "react-redux";
 
 function Rules(props) {
-    const {closeRules} = props;
+    const {setIsRules} = props;
     return (
         <>
-            <div className="rulesBlackout" onClick={closeRules} />
+            <div className="rulesBlackout" onClick={() => {setIsRules(false)}} />
             <div className="rules">
-                <div className="closeRules" onClick={closeRules}/>
-                <h3>Правила</h3>
+                <div className="closeRules" onClick={() => {setIsRules(false)}}/>
+                <h3 className={'rulesHeader'}>Правила</h3>
                 <p>Цель игры - угадать наиболее распространённые ответы
-                    людей на предложенные вопросы, на которые нельзя дать однозначный ответ.</p>
-                <p>К примеру, «Что любят есть французы?»
-                    - ответы на этот вопрос бывают совершенно непредсказуемы и часто забавны.</p>
-                <p>Попробуйте угадать все ответы!</p>
+                    людей на предложенные вопросы, которые не имеют однозначного ответа.</p>
+                <p>В прямой версии игры нужно угадывать наиболее распространённые ответы, а в обратной версии - наиболее редкие.</p>
+                <p>За каждый правильный ответ вам начисляется определённое количество денег, которые нужно использовать для открытия других уровней. Открытие уровня стоит 100.</p>
+                <p>Если не можете угадать какой-то ответ - используйте подсказку. Их можно получить за полное прохождение уровней или за просмотр рекламы.</p>
+                <p>Удачной игры!</p>
             </div>
         </>
 
     );
 }
 
-export default connect(null, (dispatch) => ({
-    closeRules: () => {
-        dispatch(changeRules());
-    }
-}))(Rules);
+export default Rules;

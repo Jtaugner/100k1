@@ -19,3 +19,14 @@
     color: white;
 
 }
+@media (min-width: 600px) {
+    .topMenu{
+        max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow:
+                3px 0 4px rgba(0, 0, 0, .5),
+                -3px 0 4px rgba(0, 0, 0, .5);
+        font-size: 2.5rem;
+    }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#309e7e" />
     <meta
@@ -10,54 +10,12 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <script src="https://yandex.ru/games/sdk/v2"></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="%PUBLIC_URL%/reset.min.css">
-    <title>React App</title>
+    <title>100 к 1</title>
   </head>
   <body>
-    <script>
-      var advTime, showAdv;
-      if(window.YaGames) {
-        window.YaGames.init({
-          adv: {
-            onAdvClose: wasShown => {
-              if (!wasShown) advTime = true;
-            }
-          }
-        }).then(ysdk => {
-          var isNativeCache = ysdk.yandexApp && ysdk.yandexApp.enabled;
-          if ('serviceWorker' in navigator && !isNativeCache) {
-            window.onload = function(){
-              navigator.serviceWorker
-                      .register('sw.js')
-                      .then(function(reg) {
-                        console.log('Registration succeeded. Scope is ' + reg.scope);
-                      })
-                      .catch(function(error) {
-                        console.error('Trouble with sw: ', error);
-                      });
-            };
-          }
-          showAdv = () => {
-            ysdk.adv.showFullscreenAdv({
-              callbacks: {
-                onClose: function () {
-                  advTime = false;
-                  setTimeout(() => {
-                    advTime = true;
-                  }, 220000);
-                }
-              }
-            });
-          };
-        });
-      }
-    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
