@@ -5,7 +5,7 @@ import {
     DONE_LEVEL,
     BACK_MENU,
     SHOW_ADV,
-    START_GAME, CHANGE_SOUNDS, GET_TIP, SHOW_ADV_TIP
+    START_GAME, CHANGE_SOUNDS, GET_TIP, SHOW_ADV_TIP, SHOW_CAUTION, CLOSE_CAUTION
 } from '../common'
 import {selectMoney, selectOrder} from "../selectors";
 
@@ -24,12 +24,17 @@ export const buyLevel =
 
         })
     }else{
-
+        dispatch({
+            type: SHOW_CAUTION
+        })
     }
 
 };
 export const backMenu = () => ({
     type: BACK_MENU
+});
+export const closeCaution = () => ({
+    type: CLOSE_CAUTION
 });
 export const getTip = () => ({
     type: GET_TIP

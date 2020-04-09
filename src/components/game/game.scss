@@ -43,6 +43,9 @@
   font-size: 1.8rem;
   color: $mainColor;
 }
+.giveAnswer:focus{
+  box-shadow: 1px 1px 1px $mainColor;
+}
 .giveAnswer::placeholder{
   color: $closedColor;
 }

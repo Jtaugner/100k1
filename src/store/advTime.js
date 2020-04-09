@@ -1,5 +1,4 @@
 import {CAN_SHOW_ADV, SHOW_ADV, SHOW_ADV_TIP} from "./common";
-import {showAdv} from "./ac";
 
 let showAdvert;
 if(window.YaGames) {

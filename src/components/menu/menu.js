@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import {
+    selectCaution,
     selectDoneDirectLevels,
     selectDoneReverseLevels,
     selectIsDirectOrder, selectIsSounds
@@ -9,11 +10,12 @@ import TopMenu from "../topMenu";
 import Rules from "../rules";
 import './menu.css'
 import MenuLevel from "../menuLevel";
-import {changeOrder, changeSounds, startGame} from "../../store/ac";
+import {changeOrder, changeSounds, closeCaution, startGame} from "../../store/ac";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Money from "../money";
 import {moneyPerAnswer} from "../common";
 import Sounds from "../sounds";
+import Caution from "../caution";
 
 function countMoneyByAnswers(answers) {
     let money = 0;
@@ -27,7 +29,8 @@ function countMoneyByAnswers(answers) {
 let ADD_LEVELS = 40;
 function Menu(props) {
     const {doneLevels, isDirectOrder, changeOrder,
-        questions, isSounds, changeSounds
+        questions, isSounds, changeSounds,
+        isCaution, closeCaution
     } = props;
     const [isRules, setIsRules] = useState(false);
     const [levelsLength, setLevelsLength] = useState(ADD_LEVELS);
@@ -69,6 +72,7 @@ function Menu(props) {
                 }
             </InfiniteScroll>
 
+
             <TopMenu>
                 <p className={'rulesButton'}
                    onClick={() => {
@@ -78,6 +82,10 @@ function Menu(props) {
                 <Sounds isSounds={isSounds} onClick={changeSounds}/>
 
             </TopMenu>
+
+            {
+                isCaution ? <Caution text={'Чтобы открыть уровень, нужно 100 монет. Заработайте их, отвечая на вопросы!'} close={closeCaution}/> : ''
+            }
 
 
 
@@ -95,7 +103,8 @@ export default connect(
         return {
            isDirectOrder,
             doneLevels, questions,
-            isSounds: selectIsSounds(store)
+            isSounds: selectIsSounds(store),
+            isCaution: selectCaution(store)
 
         }
     },
@@ -106,7 +115,8 @@ export default connect(
         startGame: (level) => {
             disptach(startGame(level));
         },
-        changeSounds: () => disptach(changeSounds())
+        changeSounds: () => disptach(changeSounds()),
+        closeCaution: () => disptach(closeCaution())
 
     })
 

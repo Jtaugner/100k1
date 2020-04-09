@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 
-let notIncludesFiles = ['.DS_Store', 'manifest-icon.png', 'yandex-manifest.json', 'precache-manifest', 'asset-manifest', 'sw.js'];
+let notIncludesFiles = ['.DS_Store', 'manifest-icon.png', 'yandex-manifest.json', 'precache-manifest', 'asset-manifest', 'sw.js', 'service-worker.js'];
 let notEndFiles = ['.map', 'LICENSE.txt'];
 function isFileGood(name) {
     for(let i = 0; i < notIncludesFiles.length; i++){

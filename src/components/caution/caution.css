@@ -1,0 +1,42 @@
+.cautionBlackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.caution {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 10px;
+  background-color: #309e7e;
+  font-size: 1.8rem;
+  text-align: center;
+  color: white;
+  border: 1px solid #2A4E40;
+}
+
+.closeCaution {
+  background-color: #2b9677;
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.2rem;
+  padding: 5px 15px;
+  margin: 15px 0 5px 0;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .caution {
+    width: 500px;
+    font-size: 2.4rem;
+  }
+}
+
+/*# sourceMappingURL=caution.css.map */

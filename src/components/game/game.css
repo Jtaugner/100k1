@@ -36,6 +36,10 @@
   color: #309e7e;
 }
 
+.giveAnswer:focus {
+  box-shadow: 1px 1px 1px #309e7e;
+}
+
 .giveAnswer::placeholder {
   color: #b4b6b4;
 }
