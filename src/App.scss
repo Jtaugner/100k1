@@ -37,7 +37,7 @@ html, body, #root{
 }
 .fade-left-enter-active ,
 .fade-left-exit-active {
-    transition: opacity 350ms, transform 350ms;
+    transition: opacity 300ms, transform 300ms;
 }
 
 
@@ -59,7 +59,7 @@ html, body, #root{
 }
 .fade-right-enter-active ,
 .fade-right-exit-active {
-    transition: opacity 350ms, transform 350ms;
+    transition: opacity 300ms, transform 300ms;
 }
 
 .my-node-enter {

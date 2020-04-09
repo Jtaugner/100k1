@@ -211,7 +211,6 @@ function Game(props) {
             <form onSubmit={testAnswer}>
                 <input type="text" className={'giveAnswer' + (wrongAnswer ? ' wrongAnswer' : '')}
                        value={answer}
-                       autoFocus={true}
                        onChange={handleInputAnswer}
 
                        placeholder={'Ваш ответ'}/>
@@ -222,6 +221,14 @@ function Game(props) {
 
     );
 }
+
+
+window.onkeydown = function(){
+    if(document.querySelector('.giveAnswer')){
+        document.querySelector('.giveAnswer').focus();
+    }
+
+};
 
 export default connect((store) => {
         let isDirect = selectIsDirectOrder(store);

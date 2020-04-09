@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fbc1ecdc-6d01-43e7-9386-63f2795c6d07" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ac/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ac/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/advTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/advTime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer/showAdvReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/showAdvReducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +111,7 @@
       <workItem from="1586342787094" duration="2513000" />
       <workItem from="1586347314987" duration="388000" />
       <workItem from="1586355234995" duration="10054000" />
-      <workItem from="1586372248429" duration="10606000" />
+      <workItem from="1586372248429" duration="11608000" />
     </task>
     <servers />
   </component>
