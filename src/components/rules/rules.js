@@ -2,12 +2,12 @@ import React from 'react';
 import './rules.scss'
 
 function Rules(props) {
-    const {setIsRules} = props;
+    const {closeRules} = props;
     return (
         <>
-            <div className="rulesBlackout" onClick={() => {setIsRules(false)}} />
+            <div className="rulesBlackout" onClick={closeRules} />
             <div className="rules">
-                <div className="closeRules" onClick={() => {setIsRules(false)}}/>
+                <div className="closeRules" onClick={closeRules}/>
                 <h3 className={'rulesHeader'}>Правила</h3>
                 <p>Цель игры - угадать наиболее распространённые ответы
                     людей на предложенные вопросы, которые не имеют однозначного ответа.</p>

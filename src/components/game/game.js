@@ -211,6 +211,19 @@ function Game(props) {
             <form onSubmit={testAnswer}>
                 <input type="text" className={'giveAnswer' + (wrongAnswer ? ' wrongAnswer' : '')}
                        value={answer}
+                       onFocus={()=>{
+                           if(window.innerHeight < 780){
+                               document.querySelector('.giveAnswer').classList.add('giveAnswer-keyboard');
+                               document.querySelector('.game').scrollTo(0, 900);
+                           }
+
+                       }}
+                       onBlur={()=>{
+                           if(window.innerHeight < 780){
+                               document.querySelector('.giveAnswer').classList.remove('giveAnswer-keyboard')
+                           }
+
+                       }}
                        onChange={handleInputAnswer}
 
                        placeholder={'Ваш ответ'}/>

@@ -5,7 +5,7 @@ import {
     DONE_LEVEL,
     BACK_MENU,
     SHOW_ADV,
-    START_GAME, CHANGE_SOUNDS, GET_TIP, SHOW_ADV_TIP, SHOW_CAUTION, CLOSE_CAUTION, NONE_LEVEL
+    START_GAME, CHANGE_SOUNDS, GET_TIP, SHOW_ADV_TIP, SHOW_CAUTION, CLOSE_CAUTION, NONE_LEVEL, OPEN_RULES, CLOSE_RULES
 } from '../common'
 import {selectMoney, selectOrder} from "../selectors";
 
@@ -32,6 +32,12 @@ export const buyLevel =
 };
 export const backMenu = () => ({
     type: BACK_MENU
+});
+export const openRules = () => ({
+    type: OPEN_RULES
+});
+export const closeRules = () => ({
+    type: CLOSE_RULES
 });
 export const noneLevel = () => ({
     type: NONE_LEVEL

@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
   padding-top: 80px;
+  overflow-y: scroll;
 }
 
 .game__question {
@@ -36,8 +37,8 @@
   color: #309e7e;
 }
 
-.giveAnswer:focus {
-  box-shadow: 1px 1px 1px #309e7e;
+.giveAnswer-keyboard {
+  margin-bottom: 300px;
 }
 
 .giveAnswer::placeholder {

@@ -9,3 +9,4 @@ export const selectLevel = store => store.level;
 export const selectIsSounds= store => store.isSounds;
 export const selectShowAdv= store => store.showAdv;
 export const selectCaution= store => store.caution;
+export const selectIsRules= store => store.isRules;

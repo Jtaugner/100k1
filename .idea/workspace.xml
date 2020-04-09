@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbc1ecdc-6d01-43e7-9386-63f2795c6d07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/store/reducer/rulesReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game/game.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/game/game.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/game/game.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rules/rules.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rules/rules.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rules/rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rules/rules.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rules/rules.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/ac/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ac/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/isDirectOrderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/isDirectOrderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/levelReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/levelReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/selectors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/selectors/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +119,7 @@
       <workItem from="1586347314987" duration="388000" />
       <workItem from="1586355234995" duration="10054000" />
       <workItem from="1586372248429" duration="12074000" />
-      <workItem from="1586431295023" duration="7053000" />
+      <workItem from="1586431295023" duration="10548000" />
     </task>
     <servers />
   </component>

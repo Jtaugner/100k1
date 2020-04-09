@@ -12,3 +12,5 @@ export const CHANGE_SOUNDS = "CHANGE_SOUNDS";
 export const SHOW_CAUTION = "SHOW_CAUTION";
 export const CLOSE_CAUTION = "CLOSE_CAUTION";
 export const NONE_LEVEL = "NONE_LEVEL";
+export const OPEN_RULES = "OPEN_RULES";
+export const CLOSE_RULES = "CLOSE_RULES";

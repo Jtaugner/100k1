@@ -4,13 +4,13 @@ import {
     selectCaution,
     selectDoneDirectLevels,
     selectDoneReverseLevels,
-    selectIsDirectOrder, selectIsGame, selectIsSounds, selectLevel
+    selectIsDirectOrder, selectIsGame, selectIsRules, selectIsSounds, selectLevel
 } from "../../store/selectors";
 import TopMenu from "../topMenu";
 import Rules from "../rules";
 import './menu.css'
 import MenuLevel from "../menuLevel";
-import {changeOrder, changeSounds, closeCaution, noneLevel, startGame} from "../../store/ac";
+import {changeOrder, changeSounds, closeCaution, closeRules, noneLevel, openRules, startGame} from "../../store/ac";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Money from "../money";
 import {moneyPerAnswer} from "../common";
@@ -31,9 +31,9 @@ function Menu(props) {
     const {doneLevels, isDirectOrder, changeOrder,
         questions, isSounds, changeSounds,
         isCaution, closeCaution, level, noneLevel,
-        isGame
+        isGame, isRules, openRules, closeRules
     } = props;
-    const [isRules, setIsRules] = useState(false);
+
     const [levelsLength, setLevelsLength]
         = useState(ADD_LEVELS);
     const [menuLevels, setMenuLevels] = useState(questions.slice(0, ADD_LEVELS));
@@ -67,7 +67,7 @@ function Menu(props) {
         if(level !== -1 && levelsLength > level && !isGame){
             let menuLevel = document.querySelectorAll('.menuLevel');
             if(menuLevel) {
-                let newLevel = (level - 5) > 0 ? (level - 5) : 0;
+                let newLevel = (level - 2) > 0 ? (level - 2) : 0;
                 if (menuLevel[newLevel]) {
                     let top = menuLevel[newLevel].getBoundingClientRect().y;
                     document.querySelector('html').scrollTo({
@@ -115,9 +115,7 @@ function Menu(props) {
 
             <TopMenu>
                 <p className={'rulesButton'}
-                   onClick={() => {
-                       setIsRules(!isRules)
-                   }}> ? </p>
+                   onClick={openRules}> ? </p>
                 <Money/>
                 <Sounds isSounds={isSounds} onClick={changeSounds}/>
 
@@ -129,7 +127,7 @@ function Menu(props) {
 
 
 
-            {isRules && <Rules setIsRules={setIsRules}/>}
+            {isRules && <Rules closeRules={closeRules}/>}
         </div>
     );
 }
@@ -146,7 +144,8 @@ export default connect(
             isSounds: selectIsSounds(store),
             isCaution: selectCaution(store),
             level: selectLevel(store),
-            isGame: selectIsGame(store)
+            isGame: selectIsGame(store),
+            isRules: selectIsRules(store)
 
         }
     },
@@ -159,7 +158,9 @@ export default connect(
         },
         changeSounds: () => disptach(changeSounds()),
         closeCaution: () => disptach(closeCaution()),
-        noneLevel: () => disptach(noneLevel())
+        noneLevel: () => disptach(noneLevel()),
+        closeRules: () => disptach(closeRules()),
+        openRules: () => disptach(openRules())
 
     })
 

@@ -8,6 +8,7 @@ import {levelReducer} from "./levelReducer";
 import {soundsReducer} from "./soundsReducer";
 import {showAdvReducer} from "./showAdvReducer";
 import {cautionReducer} from "./cautionReducer";
+import {isRulesReducer} from "./rulesReducer";
 
 
 const reducer = combineReducers({
@@ -20,7 +21,8 @@ const reducer = combineReducers({
   level: levelReducer,
   isSounds: soundsReducer,
   showAdv: showAdvReducer,
-  caution: cautionReducer
+  caution: cautionReducer,
+  isRules: isRulesReducer
 });
 
 export {reducer};
