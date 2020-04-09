@@ -1,24 +1,32 @@
 @import "../../root";
-.menuLevel{
+
+.menuLevel {
   position: relative;
 
-    border-top: $mainColor solid 1px;
-    padding: 10px 20px 10px 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 
-    font-size: 1.6rem;
-    color: black;
+  border-top: $mainColor solid 1px;
+  padding: 10px 20px 10px 0;
+
+  font-size: 1.6rem;
+  color: black;
 
 }
-.levelClosed{
-    color: $closedColor;
-    border-top: $closedColor solid 1px;
+
+.levelClosed {
+  color: $closedColor;
+  border-top: $closedColor solid 1px;
 }
-.menuLevel__payload{
-    font-size: 1.3rem;
-    padding-left: 22px;
-    margin-top: 5px;
+
+.menuLevel__payload {
+  font-size: 1.3rem;
+  padding-left: 22px;
+  margin-top: 5px;
 }
-.openLevel{
+
+.openLevel {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -31,18 +39,21 @@
   background-size: 100%;
   cursor: pointer;
 }
-.buyLevel{
+
+.buyLevel {
   background: url(../../assets/images/plus.svg) center center no-repeat;
   background-size: 100%;
 }
+
 @media (min-width: 600px) {
-  .menuLevel{
+  .menuLevel {
     font-size: 1.8rem;
+    width: 560px !important;
   }
-  .menuLevel__payload{
+  .menuLevel__payload {
     font-size: 1.5rem;
   }
-  .openLevel{
+  .openLevel {
     width: 30px;
     height: 30px;
   }

@@ -16,7 +16,7 @@ import {
 import {reverseQuestions, directQuestions} from "../../questions";
 import {addRightAnswer, getLevelDone, getTip} from "../../store/ac";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
-import {doneAnswerSound, badAnswerSound, wasAnswerSound, doneLevelSound} from "../../sounds";
+import {doneAnswerSound, badAnswerSound, doneLevelSound} from "../../sounds";
 
 //Проверка правильности ответа
 
@@ -71,12 +71,15 @@ function getFuzzyEqualsTokens(tokensFirst, tokensSecond) {
 }
 
 function calculateFuzzyEqualValue(first, second) {
+
     if ((!first && !second) || first === second) {
         return 1;
     }
     if (!first || !second) {
         return 0;
     }
+    if(first.substr(0, first.length-1)
+        === second.substr(0, second.length-1)) return 1;
     let normalizedFirst = normalizeSentence(first);
     let normalizedSecond = normalizeSentence(second);
     let fuzzyEqualsTokens = getFuzzyEqualsTokens(normalizedFirst, normalizedSecond);
@@ -91,7 +94,7 @@ function calculateFuzzyEqualValue(first, second) {
 }
 function makeAnswerGood(answer) {
     return answer.toLocaleLowerCase()
-        .replace(/(^для )|(^с )|(^из-за )/, '')
+        .replace(/(^для )|(^с )|(^из-за )|(^в )|(^из )|(^на )/, '')
         .replace('ё', 'е')
         .trim()
 }
@@ -137,7 +140,7 @@ function Game(props) {
             if (coef > 0.7) {
                 if(doneAnswers[i] === 1){
                     setDoneAnswerAnimation(i);
-                    if(isSounds) wasAnswerSound.play();
+                    if(isSounds) badAnswerSound.play();
                 }else{
                     doneAnswers[i] = 1;
                     addRightAnswer(level, i);

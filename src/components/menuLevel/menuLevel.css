@@ -1,5 +1,8 @@
 .menuLevel {
   position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
   border-top: #309e7e solid 1px;
   padding: 10px 20px 10px 0;
   font-size: 1.6rem;
@@ -37,6 +40,7 @@
 @media (min-width: 600px) {
   .menuLevel {
     font-size: 1.8rem;
+    width: 560px !important;
   }
 
   .menuLevel__payload {

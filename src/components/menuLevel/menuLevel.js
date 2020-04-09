@@ -2,12 +2,14 @@ import React from 'react';
 import './menuLevel.css'
 import {connect} from "react-redux";
 import {buyLevel, showAdv, startGame} from "../../store/ac";
-import {selectShowAdv} from "../../store/selectors";
+import {selectIsSounds, selectShowAdv} from "../../store/selectors";
+import {clickSound} from "../../sounds";
 const classNames = require('classnames');
 function MenuLevel(props) {
     const {questionNumber, question,
         answers, money, isLevelClosed, startGame,
-        buyLevel, canShowAdv, showAdv} = props;
+        buyLevel, canShowAdv, showAdv, style,
+        isSounds} = props;
     const menuLevelClasses = classNames({
         'menuLevel': true,
         'levelClosed': isLevelClosed
@@ -16,10 +18,11 @@ function MenuLevel(props) {
         if(canShowAdv){
             showAdv();
         }
-        startGame(questionNumber-1)
+        startGame(questionNumber-1);
+        if(isSounds) clickSound.play();
     };
     return (
-        <div className={menuLevelClasses} >
+        <div className={menuLevelClasses} style={style}>
             <p className="menuLevel__question">
                 {questionNumber}) {question}
             </p>
@@ -38,7 +41,8 @@ function MenuLevel(props) {
     );
 }
 export default connect((store)=>({
-    canShowAdv: selectShowAdv(store)
+    canShowAdv: selectShowAdv(store),
+    isSounds: selectIsSounds(store),
 }), (dispatch)=>({
     startGame: (level) => {
         dispatch(startGame(level));

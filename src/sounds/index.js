@@ -104,7 +104,7 @@ const NewAudioContext = (function () {
 
 export const doneAnswerSound = new NewAudioContext('doneAnswer.mp3');
 export const badAnswerSound = new NewAudioContext('badAnswer.mp3');
-export const wasAnswerSound = new NewAudioContext('wasAnswer.mp3');
 export const doneLevelSound = new NewAudioContext('doneLevel.mp3');
+export const clickSound = new NewAudioContext('click.mp3');
 
 
