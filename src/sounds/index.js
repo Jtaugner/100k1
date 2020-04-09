@@ -57,7 +57,7 @@ const NewAudioContext = (function () {
         }
 
         this.url = url;
-        this.volume = 1;
+        this.volume = 0.6;
         window.webAudioAPISoundManager = window.webAudioAPISoundManager || new WebAudioAPISoundManager(window.audioContext);
         this.manager = window.webAudioAPISoundManager;
         this.manager.addSound(this.url);

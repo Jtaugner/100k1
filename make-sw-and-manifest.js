@@ -48,7 +48,7 @@ const  contentSW = `var CACHE_NAME = 'v${version}';
 this.addEventListener('install', function (event) {
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
-            return cache.addAll(${allFilesString});
+            return cache.addAll([${allFilesString}]);
         })
     );
 });

@@ -1,7 +1,8 @@
 import {applyMiddleware, createStore} from 'redux'
 import {reducer} from './reducer'
 import thunk from 'redux-thunk'
-const enhancer = applyMiddleware(thunk);
+import {setAdvTime} from "./advTime";
+const enhancer = applyMiddleware(thunk, setAdvTime);
 
 
 
