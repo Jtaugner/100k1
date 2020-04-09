@@ -26,7 +26,7 @@
   transform: translateY(-50%);
   right: 0;
   width: 20px;
-  height: 20px;
+  height: 100%;
   background: url(../../assets/images/chevron-right.svg) center center no-repeat;
   background-size: 100%;
   cursor: pointer;
