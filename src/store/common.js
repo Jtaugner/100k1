@@ -11,3 +11,4 @@ export const BACK_MENU = "BACK_MENU";
 export const CHANGE_SOUNDS = "CHANGE_SOUNDS";
 export const SHOW_CAUTION = "SHOW_CAUTION";
 export const CLOSE_CAUTION = "CLOSE_CAUTION";
+export const NONE_LEVEL = "NONE_LEVEL";

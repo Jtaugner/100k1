@@ -4,13 +4,13 @@ import {
     selectCaution,
     selectDoneDirectLevels,
     selectDoneReverseLevels,
-    selectIsDirectOrder, selectIsSounds
+    selectIsDirectOrder, selectIsGame, selectIsSounds, selectLevel
 } from "../../store/selectors";
 import TopMenu from "../topMenu";
 import Rules from "../rules";
 import './menu.css'
 import MenuLevel from "../menuLevel";
-import {changeOrder, changeSounds, closeCaution, startGame} from "../../store/ac";
+import {changeOrder, changeSounds, closeCaution, noneLevel, startGame} from "../../store/ac";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Money from "../money";
 import {moneyPerAnswer} from "../common";
@@ -30,26 +30,66 @@ let ADD_LEVELS = 40;
 function Menu(props) {
     const {doneLevels, isDirectOrder, changeOrder,
         questions, isSounds, changeSounds,
-        isCaution, closeCaution
+        isCaution, closeCaution, level, noneLevel,
+        isGame
     } = props;
     const [isRules, setIsRules] = useState(false);
-    const [levelsLength, setLevelsLength] = useState(ADD_LEVELS);
+    const [levelsLength, setLevelsLength]
+        = useState(ADD_LEVELS);
     const [menuLevels, setMenuLevels] = useState(questions.slice(0, ADD_LEVELS));
     useEffect(() => {
-        setMenuLevels(questions.slice(0, ADD_LEVELS))
+        if(level !== -1 && !isGame) {
+
+            let newLevel = level + ADD_LEVELS;
+            let qLength = newLevel >= questions.length ?  questions.length - 1 : newLevel;
+            setLevelsLength(qLength);
+            setMenuLevels(questions.slice(0, qLength));
+        }
+
+    }, [level]);
+    useEffect(() => {
+        if(level === -1 && !isGame) setMenuLevels(questions.slice(0, ADD_LEVELS));
     }, [questions]);
+
+
+
     const addLevels = () => {
         setMenuLevels(questions.slice(0, levelsLength + ADD_LEVELS));
         setLevelsLength(levelsLength + ADD_LEVELS);
     };
+    const orderChange = (direct) => {
+        if(direct === isDirectOrder) return;
+        changeOrder(direct);
+    };
+
+    //Пролистывании до уровня, на котором был
+    useEffect(()=>{
+        if(level !== -1 && levelsLength > level && !isGame){
+            let menuLevel = document.querySelectorAll('.menuLevel');
+            if(menuLevel) {
+                let newLevel = (level - 5) > 0 ? (level - 5) : 0;
+                if (menuLevel[newLevel]) {
+                    let top = menuLevel[newLevel].getBoundingClientRect().y;
+                    document.querySelector('html').scrollTo({
+                        top: top
+                    });
+                    noneLevel();
+                }
+            }
+        }
+    }, [level, levelsLength]);
+
+
+
+
     return (
         <div className="menu">
             <div className="menu_chooseOrder">
                 <p
-                    onClick={() => {changeOrder(true)}}
+                    onClick={() => {orderChange(true)}}
                     className={isDirectOrder ? 'menu_chooseOrder_active' : ''}>Прямая</p>
                 <p
-                    onClick={() => {changeOrder(false)}}
+                    onClick={() => {orderChange(false)}}
                     className={!isDirectOrder ? 'menu_chooseOrder_active' : ''}>Обратная</p>
             </div>
             <InfiniteScroll
@@ -104,7 +144,9 @@ export default connect(
            isDirectOrder,
             doneLevels, questions,
             isSounds: selectIsSounds(store),
-            isCaution: selectCaution(store)
+            isCaution: selectCaution(store),
+            level: selectLevel(store),
+            isGame: selectIsGame(store)
 
         }
     },
@@ -116,7 +158,8 @@ export default connect(
             disptach(startGame(level));
         },
         changeSounds: () => disptach(changeSounds()),
-        closeCaution: () => disptach(closeCaution())
+        closeCaution: () => disptach(closeCaution()),
+        noneLevel: () => disptach(noneLevel())
 
     })
 
