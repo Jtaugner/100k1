@@ -1,5 +1,5 @@
-import {canShowAdv} from "./ac";
 import {CAN_SHOW_ADV, SHOW_ADV, SHOW_ADV_TIP} from "./common";
+import {showAdv} from "./ac";
 
 let showAdvert;
 if(window.YaGames) {
@@ -28,21 +28,19 @@ export const setAdvTime  = store => next => action => {
     if(action.type === SHOW_ADV || action.type === SHOW_ADV_TIP){
         if(showAdvert){
             showAdvert();
-            setTimeout(()=>{
-                next({
-                    ...action,
-                    type: CAN_SHOW_ADV
-                })
-            }, 5000);
             next(action);
-            return;
+        }else{
+            next({type:SHOW_ADV});
         }
-        next({
-            ...action,
-            type:SHOW_ADV
-        })
+        setTimeout(()=>{
+            next({
+                ...action,
+                type: CAN_SHOW_ADV
+            })
+        }, 190000);
+
     }else{
         next(action);
     }
 
-}
+};

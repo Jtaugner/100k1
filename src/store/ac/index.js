@@ -5,7 +5,7 @@ import {
     DONE_LEVEL,
     BACK_MENU,
     SHOW_ADV,
-    START_GAME, CHANGE_SOUNDS, GET_TIP, CAN_SHOW_ADV, SHOW_ADV_TIP
+    START_GAME, CHANGE_SOUNDS, GET_TIP, SHOW_ADV_TIP
 } from '../common'
 import {selectMoney, selectOrder} from "../selectors";
 
